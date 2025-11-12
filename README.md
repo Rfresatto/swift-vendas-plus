@@ -98,9 +98,13 @@ Este projeto permitiu aplicar na prática conceitos fundamentais de:
 ## 👥 Autores
 
 **RENAN FRESATTO MARTINS**
+
 **ARTHUR TASSINARI RESENDE**
+
 **MIGUEL SIQUEIRA DE LIMA**
+
 **JULIO CESAR BASTOS DE VARGAS JUNIOR**
+
 **JOÃO RICARDO FIDELIX BUENO**
 
 - Curso: 1°ano - Analise e Desenvolvimento de Sistemas
