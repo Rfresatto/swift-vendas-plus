@@ -80,7 +80,7 @@ _Visão geral com estatísticas e missões ativas_
 
 ### Configurações
 
-![Painel de Configurações](images/dark_mode_on.png.png)
+![Painel de Configurações](images/dark_mode_on.png)
 _Personalização com modo escuro_
 
 ## 🎯 Aprendizados
