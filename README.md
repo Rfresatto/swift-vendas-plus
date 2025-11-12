@@ -76,11 +76,13 @@ code .
 ### Dashboard
 
 ![Dashboard Principal](images/dashboard.png)
+
 _Visão geral com estatísticas e missões ativas_
 
 ### Configurações
 
 ![Painel de Configurações](images/dark_mode_on.png)
+
 _Personalização com modo escuro_
 
 ## 🎯 Aprendizados
