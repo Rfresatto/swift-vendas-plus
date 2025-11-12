@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swift Vendas+</title>
+    <link rel="stylesheet" href="../css/ranking.css" />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu Lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <img
+            class="img-logo"
+            src="/images/logo_swift+venda+_branca-transp-cort.png"
+            alt="Swift Venda+"
+          />
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <span class="nav-icon"
+            ><i class="bx-grid-circle-diagonal-right"></i>
+          </span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="ranking.html" class="nav-item active">
+          <span class="nav-icon"><i class="bx-trophy-star"></i> </span>
+          <span class="nav-text">Ranking</span>
+        </a>
+        <a href="missoes.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-bullseye"></i> </span>
+          <span class="nav-text">Missões</span>
+        </a>
+        <a href="conquistas.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-medal-star-alt"></i> </span>
+          <span class="nav-text">Conquistas</span>
+        </a>
+        <a href="cursos.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-book-bookmark"></i> </span>
+          <span class="nav-text">Cursos</span>
+        </a>
+        <a href="configuracoes.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-cog"></i> </span>
+          <span class="nav-text">Configurações</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">JS</div>
+          <div class="user-details">
+            <div class="user-name">João Silva</div>
+            <div class="user-role">Vendedor</div>
+          </div>
+        </div>
+        <button class="logout-btn" onclick="logout()">
+          <span>🚪</span>
+          <span>Sair</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content" id="mainContent">
+      <!-- Header -->
+      <header class="page-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <h1 class="page-title">
+            <span class="title-icon"><i class="bx-trophy-star"></i></span>
+            Rankings
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="user-position">
+            <span class="position-label">Sua Posição</span>
+            <span class="position-number" id="userPosition">#4</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Tabs de Ranking -->
+      <section class="tabs-section">
+        <div class="ranking-tabs">
+          <button class="ranking-tab active" data-ranking="loja">
+            <span class="tab-icon">🏪</span>
+            <span class="tab-text">Loja</span>
+          </button>
+          <button class="ranking-tab" data-ranking="estado">
+            <span class="tab-icon">📍</span>
+            <span class="tab-text">Estado</span>
+          </button>
+          <button class="ranking-tab" data-ranking="nacional">
+            <span class="tab-icon">🇧🇷</span>
+            <span class="tab-text">Nacional</span>
+          </button>
+        </div>
+
+        <div class="period-selector">
+          <select id="periodSelect">
+            <option value="month">Este Mês</option>
+            <option value="week">Esta Semana</option>
+            <option value="today">Hoje</option>
+            <option value="all">Todo Período</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Pódio (Top 3) -->
+      <section class="podium-section" id="podiumSection">
+        <div class="podium-container">
+          <!-- 2º Lugar -->
+          <div class="podium-place second" id="podium2">
+            <div class="podium-position">2º</div>
+            <div class="podium-avatar">
+              <span class="avatar-text">CO</span>
+              <span class="medal">🥈</span>
+            </div>
+            <div class="podium-info">
+              <div class="podium-name">Carlos Oliveira</div>
+              <div class="podium-points">1.620 pts</div>
+            </div>
+          </div>
+
+          <!-- 1º Lugar -->
+          <div class="podium-place first" id="podium1">
+            <div class="podium-crown">👑</div>
+            <div class="podium-position">1º</div>
+            <div class="podium-avatar">
+              <span class="avatar-text">MS</span>
+              <span class="medal">🥇</span>
+            </div>
+            <div class="podium-info">
+              <div class="podium-name">Maria Santos</div>
+              <div class="podium-points">1.850 pts</div>
+            </div>
+          </div>
+
+          <!-- 3º Lugar -->
+          <div class="podium-place third" id="podium3">
+            <div class="podium-position">3º</div>
+            <div class="podium-avatar">
+              <span class="avatar-text">AC</span>
+              <span class="medal">🥉</span>
+            </div>
+            <div class="podium-info">
+              <div class="podium-name">Ana Costa</div>
+              <div class="podium-points">1.480 pts</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lista de Ranking -->
+      <section class="ranking-section">
+        <div class="ranking-header">
+          <h2 id="rankingTitle">Ranking da Loja</h2>
+          <span class="ranking-total" id="rankingTotal">10 vendedores</span>
+        </div>
+
+        <div class="ranking-list" id="rankingList">
+          <!-- Lista será carregada via JavaScript -->
+        </div>
+      </section>
+
+      <!-- Modal de Detalhes do Vendedor -->
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose">×</button>
+          <div class="modal-header">
+            <div class="modal-avatar" id="modalAvatar">JS</div>
+            <div class="modal-title-section">
+              <h2 class="modal-title" id="modalTitle">João Silva</h2>
+              <div class="modal-subtitle" id="modalSubtitle">Vendedor</div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-value" id="modalPosition">#4</div>
+                <div class="stat-label">Posição</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value" id="modalPoints">1.247</div>
+                <div class="stat-label">Pontos</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-value" id="modalSales">87</div>
+                <div class="stat-label">Vendas</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-value" id="modalRevenue">R$ 45K</div>
+                <div class="stat-label">Receita</div>
+              </div>
+            </div>
+
+            <div class="achievements-preview">
+              <h4>Conquistas Recentes</h4>
+              <div class="achievements-list" id="modalAchievements">
+                <!-- Conquistas serão carregadas via JS -->
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn-secondary" onclick="closeModal()">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/ranking.js"></script>
+  </body>
+</html>

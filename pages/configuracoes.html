@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swift Vendas</title>
+    <link rel="stylesheet" href="../css/configuracoes.css" />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu Lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <img
+            class="img-logo"
+            src="/images/logo_swift+venda+_branca-transp-cort.png"
+            alt="Swift Venda+"
+          />
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <span class="nav-icon"
+            ><i class="bx-grid-circle-diagonal-right"></i>
+          </span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="ranking.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-trophy-star"></i> </span>
+          <span class="nav-text">Ranking</span>
+        </a>
+        <a href="missoes.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-bullseye"></i> </span>
+          <span class="nav-text">Missões</span>
+        </a>
+        <a href="conquistas.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-medal-star-alt"></i> </span>
+          <span class="nav-text">Conquistas</span>
+        </a>
+        <a href="cursos.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-book-bookmark"></i> </span>
+          <span class="nav-text">Cursos</span>
+        </a>
+        <a href="configuracoes.html" class="nav-item active">
+          <span class="nav-icon"><i class="bx-cog"></i> </span>
+          <span class="nav-text">Configurações</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">JS</div>
+          <div class="user-details">
+            <div class="user-name">João Silva</div>
+            <div class="user-role">Vendedor</div>
+          </div>
+        </div>
+        <button class="logout-btn" onclick="logout()">
+          <span>🚪</span>
+          <span>Sair</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content" id="mainContent">
+      <!-- Header -->
+      <header class="page-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <h1 class="page-title">
+            <span class="title-icon"><i class="bx-cog"></i></span>
+            Configurações
+          </h1>
+        </div>
+      </header>
+
+      <!-- Menu de Configurações -->
+      <section class="settings-tabs">
+        <button class="settings-tab active" data-tab="perfil">
+          <span class="tab-icon">👤</span>
+          <span class="tab-text">Perfil</span>
+        </button>
+        <button class="settings-tab" data-tab="aparencia">
+          <span class="tab-icon">🎨</span>
+          <span class="tab-text">Aparência</span>
+        </button>
+        <button class="settings-tab" data-tab="notificacoes">
+          <span class="tab-icon">🔔</span>
+          <span class="tab-text">Notificações</span>
+        </button>
+        <button class="settings-tab" data-tab="privacidade">
+          <span class="tab-icon">🔒</span>
+          <span class="tab-text">Privacidade</span>
+        </button>
+        <button class="settings-tab" data-tab="ajuda">
+          <span class="tab-icon">❓</span>
+          <span class="tab-text">Ajuda/FAQ</span>
+        </button>
+      </section>
+
+      <!-- Conteúdo das Configurações -->
+      <section class="settings-content">
+        <!-- ABA PERFIL -->
+        <div class="settings-panel active" id="perfil-panel">
+          <div class="panel-header">
+            <h2>Informações do Perfil</h2>
+            <p>Gerencie suas informações pessoais e foto de perfil</p>
+          </div>
+
+          <div class="settings-card">
+            <div class="profile-photo-section">
+              <div class="current-photo">
+                <div class="photo-avatar">JS</div>
+              </div>
+              <div class="photo-actions">
+                <button
+                  class="btn-primary"
+                  onclick="showNotification('Função de upload em desenvolvimento', 'info')"
+                >
+                  Alterar Foto
+                </button>
+                <button
+                  class="btn-secondary"
+                  onclick="showNotification('Foto removida', 'success')"
+                >
+                  Remover
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <form id="profileForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Nome Completo</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    value="João Silva"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>E-mail</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value="joao.silva@empresa.com"
+                    class="form-input"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Telefone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value="(34) 99999-9999"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Cargo</label>
+                  <input
+                    type="text"
+                    id="role"
+                    value="Vendedor"
+                    class="form-input"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Departamento</label>
+                  <select id="department" class="form-input">
+                    <option value="vendas" selected>Vendas</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="suporte">Suporte</option>
+                    <option value="gerencia">Gerência</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                  Salvar Alterações
+                </button>
+                <button type="reset" class="btn-secondary">Cancelar</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="settings-card danger-zone">
+            <h3>Zona de Perigo</h3>
+            <p>Ações irreversíveis que afetam sua conta</p>
+            <button class="btn-danger" onclick="confirmAccountDeletion()">
+              Excluir Conta Permanentemente
+            </button>
+          </div>
+        </div>
+
+        <!-- ABA APARÊNCIA -->
+        <div class="settings-panel" id="aparencia-panel">
+          <div class="panel-header">
+            <h2>Aparência</h2>
+            <p>Personalize a aparência da plataforma</p>
+          </div>
+
+          <div class="settings-card">
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Modo Escuro</h3>
+                <p>Ative o tema escuro para reduzir o cansaço visual</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="darkModeToggle" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Tamanho da Fonte</h3>
+                <p>Ajuste o tamanho do texto na plataforma</p>
+              </div>
+            </div>
+            <div class="font-size-control">
+              <button class="font-btn" data-size="small">A</button>
+              <button class="font-btn active" data-size="medium">A</button>
+              <button class="font-btn" data-size="large">A</button>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Animações</h3>
+                <p>Desative para melhorar a performance</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="animationsToggle" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABA NOTIFICAÇÕES -->
+        <div class="settings-panel" id="notificacoes-panel">
+          <div class="panel-header">
+            <h2>Notificações</h2>
+            <p>Controle quando e como você recebe notificações</p>
+          </div>
+
+          <div class="settings-card">
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Notificações Push</h3>
+                <p>Receba notificações no navegador</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="pushNotifications" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Notificações por E-mail</h3>
+                <p>Receba resumos diários por e-mail</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="emailNotifications" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Sons de Notificação</h3>
+                <p>Reproduzir som ao receber notificações</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="soundNotifications" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3 style="margin-bottom: 15px">Tipos de Notificação</h3>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Novas Missões</h4>
+                <p>Quando missões diárias forem renovadas</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifyMissions" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Conquistas Desbloqueadas</h4>
+                <p>Quando você desbloquear uma conquista</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifyAchievements" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Mudanças no Ranking</h4>
+                <p>Quando sua posição no ranking mudar</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifyRanking" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Novos Cursos</h4>
+                <p>Quando novos cursos forem disponibilizados</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifyCourses" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABA PRIVACIDADE -->
+        <div class="settings-panel" id="privacidade-panel">
+          <div class="panel-header">
+            <h2>Privacidade e Segurança</h2>
+            <p>Gerencie suas configurações de privacidade e segurança</p>
+          </div>
+
+          <div class="settings-card">
+            <h3 style="margin-bottom: 15px">Visibilidade do Perfil</h3>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Perfil Público</h4>
+                <p>Outros usuários podem ver seu perfil</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="publicProfile" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Mostrar no Ranking</h4>
+                <p>Aparecer nos rankings públicos</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="showInRanking" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Mostrar Conquistas</h4>
+                <p>Permitir que outros vejam suas conquistas</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="showAchievements" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3 style="margin-bottom: 15px">Segurança</h3>
+
+            <div class="form-group">
+              <label>Alterar Senha</label>
+              <button class="btn-secondary" onclick="openPasswordModal()">
+                Atualizar Senha
+              </button>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Autenticação em Duas Etapas</h4>
+                <p>Adicione uma camada extra de segurança</p>
+              </div>
+              <button
+                class="btn-secondary"
+                onclick="showNotification('Função em desenvolvimento', 'info')"
+              >
+                Configurar
+              </button>
+            </div>
+
+            <div class="form-group">
+              <label>Sessões Ativas</label>
+              <button class="btn-danger" onclick="confirmLogoutAllDevices()">
+                Sair de Todos os Dispositivos
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3 style="margin-bottom: 15px">Dados e Privacidade</h3>
+
+            <div class="privacy-actions">
+              <button class="btn-secondary" onclick="downloadUserData()">
+                📥 Baixar Meus Dados
+              </button>
+              <button
+                class="btn-secondary"
+                onclick="showNotification('Política de privacidade aberta', 'info')"
+              >
+                📄 Política de Privacidade
+              </button>
+              <button
+                class="btn-secondary"
+                onclick="showNotification('Termos de uso abertos', 'info')"
+              >
+                📋 Termos de Uso
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABA AJUDA/FAQ -->
+        <div class="settings-panel" id="ajuda-panel">
+          <div class="panel-header">
+            <h2>Ajuda e Perguntas Frequentes</h2>
+            <p>Encontre respostas para suas dúvidas</p>
+          </div>
+
+          <div class="settings-card">
+            <div class="search-help">
+              <input
+                type="text"
+                id="helpSearch"
+                placeholder="Buscar na ajuda..."
+                class="form-input"
+              />
+              <button class="btn-primary" onclick="searchHelp()">
+                🔍 Buscar
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3 style="margin-bottom: 20px">Perguntas Frequentes</h3>
+
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                  <span>Como funcionam as missões diárias?</span>
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  As missões diárias são renovadas todo dia à meia-noite. Você
+                  tem 24 horas para completá-las e ganhar pontos. Missões não
+                  concluídas expiram e novas aparecem no dia seguinte.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                  <span>Como subir no ranking?</span>
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Você sobe no ranking completando missões, desbloqueando
+                  conquistas e realizando vendas. Cada ação gera pontos que
+                  somam à sua pontuação total.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                  <span>Como desbloquear conquistas?</span>
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Cada conquista tem requisitos específicos. Você pode vê-los
+                  clicando na conquista. Complete os requisitos para
+                  desbloqueá-la e ganhar pontos de bônus.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                  <span>Os cursos são obrigatórios?</span>
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Não, os cursos são opcionais mas recomendados. Completá-los
+                  gera pontos e pode desbloquear conquistas especiais
+                  relacionadas a aprendizado.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                  <span>Como alterar minha foto de perfil?</span>
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Vá em Configurações > Perfil e clique em "Alterar Foto". Você
+                  pode fazer upload de uma imagem JPG ou PNG de até 5MB.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                  <span>Posso desativar as notificações?</span>
+                  <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Sim! Vá em Configurações > Notificações e desative os tipos de
+                  notificação que não deseja receber. Você pode configurar
+                  individualmente cada tipo.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3 style="margin-bottom: 15px">Precisa de Mais Ajuda?</h3>
+            <div class="help-contacts">
+              <button
+                class="help-btn"
+                onclick="showNotification('Chat em desenvolvimento', 'info')"
+              >
+                💬 Chat ao Vivo
+              </button>
+              <button
+                class="help-btn"
+                onclick="showNotification('E-mail: suporte@swiftvendas.com', 'info')"
+              >
+                ✉️ Enviar E-mail
+              </button>
+              <button
+                class="help-btn"
+                onclick="showNotification('Tel: 0800-123-4567', 'info')"
+              >
+                📞 Ligar para Suporte
+              </button>
+              <button
+                class="help-btn"
+                onclick="showNotification('Tutorial iniciado', 'success')"
+              >
+                🎓 Tutorial Interativo
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="app-info">
+              <h3>Sobre o Swift Vendas+</h3>
+              <p><strong>Versão:</strong> 1.0.0</p>
+              <p><strong>Última Atualização:</strong> 01/10/2024</p>
+              <p><strong>Desenvolvido por:</strong> Swift Team</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal de Senha -->
+      <div class="modal-overlay" id="passwordModal">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closePasswordModal()">×</button>
+          <div class="modal-header">
+            <h2>Alterar Senha</h2>
+          </div>
+          <div class="modal-body">
+            <form id="passwordForm">
+              <div class="form-group">
+                <label>Senha Atual</label>
+                <input
+                  type="password"
+                  id="currentPassword"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Nova Senha</label>
+                <input
+                  type="password"
+                  id="newPassword"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Confirmar Nova Senha</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                  Atualizar Senha
+                </button>
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closePasswordModal()"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/configuracoes.js"></script>
+  </body>
+</html>

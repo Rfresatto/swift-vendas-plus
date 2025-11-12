@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swift Vendas+</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu Lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <img
+            class="img-logo"
+            src="/images/logo_swift+venda+_branca-transp-cort.png"
+            alt="Swift Venda+"
+          />
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item active">
+          <span class="nav-icon"
+            ><i class="bx-grid-circle-diagonal-right"></i>
+          </span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="ranking.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-trophy-star"></i> </span>
+          <span class="nav-text">Ranking</span>
+        </a>
+        <a href="missoes.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-bullseye"></i> </span>
+          <span class="nav-text">Missões</span>
+        </a>
+        <a href="conquistas.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-medal-star-alt"></i> </span>
+          <span class="nav-text">Conquistas</span>
+        </a>
+        <a href="cursos.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-book-bookmark"></i> </span>
+          <span class="nav-text">Cursos</span>
+        </a>
+        <a href="configuracoes.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-cog"></i> </span>
+          <span class="nav-text">Configurações</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">JS</div>
+          <div class="user-details">
+            <div class="user-name">João Silva</div>
+            <div class="user-role">Vendedor</div>
+          </div>
+        </div>
+        <button class="logout-btn" onclick="logout()">
+          <span>🚪</span>
+          <span>Sair</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content" id="mainContent">
+      <!-- Header -->
+      <header class="page-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <h1 class="page-title">
+            <span class="title-icon">
+              <i class="bx-grid-circle-diagonal-right"></i
+            ></span>
+            Dashboard
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="welcome-text">Bem-vindo, João Silva</div>
+        </div>
+      </header>
+
+      <!-- Stats -->
+      <section class="stats-section">
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-number">1.247</div>
+            <div class="stat-label">Pontos Totais</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">87%</div>
+            <div class="stat-label">Missões Completas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Conquistas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Cursos Concluídos</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Grid -->
+      <section class="content-section">
+        <div class="grid">
+          <!-- Ranking -->
+          <div class="card">
+            <div class="card-title">
+              <span class="icon">🏆</span>
+              Ranking de Funcionários
+            </div>
+            <div class="rank-item">
+              <div class="rank-position">1º</div>
+              <div class="rank-info">
+                <div class="rank-name">Maria Santos</div>
+                <div class="rank-dept">Vendas</div>
+              </div>
+              <div class="rank-score">1.850</div>
+            </div>
+            <div class="rank-item">
+              <div class="rank-position">2º</div>
+              <div class="rank-info">
+                <div class="rank-name">Carlos Oliveira</div>
+                <div class="rank-dept">Marketing</div>
+              </div>
+              <div class="rank-score">1.620</div>
+            </div>
+            <div class="rank-item">
+              <div class="rank-position">3º</div>
+              <div class="rank-info">
+                <div class="rank-name">Ana Costa</div>
+                <div class="rank-dept">Vendas</div>
+              </div>
+              <div class="rank-score">1.480</div>
+            </div>
+            <div class="rank-item">
+              <div class="rank-position">4º</div>
+              <div class="rank-info">
+                <div class="rank-name">João Silva</div>
+                <div class="rank-dept">Vendas</div>
+              </div>
+              <div class="rank-score">1.247</div>
+            </div>
+          </div>
+
+          <!-- Missões -->
+          <div class="card">
+            <div class="card-title">
+              <span class="icon">🎯</span>
+              Missões Ativas
+            </div>
+            <div class="mission-item">
+              <div class="status done"></div>
+              <div class="mission-info">
+                <div class="mission-name">Vender 50 produtos</div>
+                <div class="mission-progress">Concluída</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="mission-item">
+              <div class="status doing"></div>
+              <div class="mission-info">
+                <div class="mission-name">Fazer 20 ligações</div>
+                <div class="mission-progress">15/20 realizadas</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="mission-item">
+              <div class="status todo"></div>
+              <div class="mission-info">
+                <div class="mission-name">Participar de reunião</div>
+                <div class="mission-progress">Pendente</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conquistas -->
+          <div class="card">
+            <div class="card-title">
+              <span class="icon">🏅</span>
+              Conquistas
+            </div>
+            <div class="achievements">
+              <div class="achievement unlocked">
+                <div class="achievement-icon">🥇</div>
+                <div class="achievement-name">Primeira Venda</div>
+              </div>
+              <div class="achievement unlocked">
+                <div class="achievement-icon">🎯</div>
+                <div class="achievement-name">Meta Mensal</div>
+              </div>
+              <div class="achievement unlocked">
+                <div class="achievement-icon">🔥</div>
+                <div class="achievement-name">Sequência 7 dias</div>
+              </div>
+              <div class="achievement">
+                <div class="achievement-icon">👑</div>
+                <div class="achievement-name">Top Vendedor</div>
+              </div>
+              <div class="achievement">
+                <div class="achievement-icon">🚀</div>
+                <div class="achievement-name">Super Meta</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cursos -->
+          <div class="card">
+            <div class="card-title">
+              <span class="icon">📚</span>
+              Cursos em Andamento
+            </div>
+            <div class="course-item">
+              <div class="course-icon">📈</div>
+              <div class="course-info">
+                <div class="course-name">Técnicas de Vendas</div>
+                <div class="course-progress">Módulo 3 de 5</div>
+              </div>
+              <div class="course-percent">60%</div>
+            </div>
+            <div class="course-item">
+              <div class="course-icon">💬</div>
+              <div class="course-info">
+                <div class="course-name">Atendimento ao Cliente</div>
+                <div class="course-progress">Módulo 4 de 6</div>
+              </div>
+              <div class="course-percent">67%</div>
+            </div>
+            <div class="course-item">
+              <div class="course-icon">🧠</div>
+              <div class="course-info">
+                <div class="course-name">Liderança e Gestão</div>
+                <div class="course-progress">Módulo 1 de 8</div>
+              </div>
+              <div class="course-percent">12%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="../js/dark-mode-global.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

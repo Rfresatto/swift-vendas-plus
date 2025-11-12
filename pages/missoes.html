@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swift Vendas+</title>
+    <link rel="stylesheet" href="../css/missoes.css" />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu Lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <img
+            class="img-logo"
+            src="/images/logo_swift+venda+_branca-transp-cort.png"
+            alt="Swift Venda+"
+          />
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <span class="nav-icon"
+            ><i class="bx-grid-circle-diagonal-right"></i>
+          </span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="ranking.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-trophy-star"></i> </span>
+          <span class="nav-text">Ranking</span>
+        </a>
+        <a href="missoes.html" class="nav-item active">
+          <span class="nav-icon"><i class="bx-bullseye"></i> </span>
+          <span class="nav-text">Missões</span>
+        </a>
+        <a href="conquistas.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-medal-star-alt"></i> </span>
+          <span class="nav-text">Conquistas</span>
+        </a>
+        <a href="cursos.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-book-bookmark"></i> </span>
+          <span class="nav-text">Cursos</span>
+        </a>
+        <a href="configuracoes.html" class="nav-item">
+          <span class="nav-icon"><i class="bx-cog"></i> </span>
+          <span class="nav-text">Configurações</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">JS</div>
+          <div class="user-details">
+            <div class="user-name">João Silva</div>
+            <div class="user-role">Vendedor</div>
+          </div>
+        </div>
+        <button class="logout-btn" onclick="logout()">
+          <span>🚪</span>
+          <span>Sair</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content" id="mainContent">
+      <!-- Header -->
+      <header class="page-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <h1 class="page-title">
+            <span class="title-icon"><i class="bx-bullseye"></i></span>
+            Missões
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="missions-summary">
+            <span class="summary-item">
+              <span class="summary-number" id="completedCount">8</span>
+              <span class="summary-text">Concluídas</span>
+            </span>
+            <span class="summary-divider">|</span>
+            <span class="summary-item">
+              <span class="summary-number" id="activeCount">4</span>
+              <span class="summary-text">Ativas</span>
+            </span>
+            <span class="summary-divider">|</span>
+            <span class="summary-item">
+              <span class="summary-number" id="totalPoints">1250</span>
+              <span class="summary-text">Pontos</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Filtros -->
+      <section class="filters-section">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">
+            <span>📋</span>
+            Todas
+          </button>
+          <button class="filter-tab" data-filter="completed">
+            <span>✅</span>
+            Concluídas
+          </button>
+          <button class="filter-tab" data-filter="in-progress">
+            <span>⏳</span>
+            Em Andamento
+          </button>
+          <button class="filter-tab" data-filter="daily">
+            <span>📅</span>
+            Diárias
+          </button>
+          <button class="filter-tab" data-filter="weekly">
+            <span>📆</span>
+            Semanais
+          </button>
+        </div>
+
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Buscar missões..." />
+          <span class="search-icon">🔍</span>
+        </div>
+      </section>
+
+      <!-- Progress Overview -->
+      <section class="progress-section">
+        <div class="progress-card">
+          <div class="progress-header">
+            <h3>Progresso Geral das Missões</h3>
+            <span class="progress-percentage" id="overallProgress">67%</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div
+                class="progress-fill"
+                id="overallProgressFill"
+                style="width: 67%"
+              ></div>
+            </div>
+          </div>
+          <div class="progress-details">
+            <div class="progress-stats">
+              <span class="stat-item">
+                <span class="stat-number" id="totalMissions">12</span>
+                <span class="stat-label">Total</span>
+              </span>
+              <span class="stat-item">
+                <span class="stat-number" id="completedMissions">8</span>
+                <span class="stat-label">Concluídas</span>
+              </span>
+              <span class="stat-item">
+                <span class="stat-number" id="activeMissions">4</span>
+                <span class="stat-label">Ativas</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Missões Grid -->
+      <section class="missions-section">
+        <div class="missions-grid" id="missionsGrid">
+          <!-- Missões serão carregadas via JavaScript -->
+        </div>
+      </section>
+
+      <!-- Modal de Detalhes da Missão -->
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose">×</button>
+          <div class="modal-header">
+            <div class="modal-icon" id="modalIcon">🎯</div>
+            <h2 class="modal-title" id="modalTitle">Título da Missão</h2>
+            <div class="modal-type" id="modalType">Diária</div>
+          </div>
+          <div class="modal-body">
+            <div class="modal-description" id="modalDescription">
+              Descrição da missão...
+            </div>
+
+            <div class="modal-requirements">
+              <h4>Requisitos:</h4>
+              <div class="requirements-list" id="modalRequirements">
+                <!-- Requisitos serão carregados via JS -->
+              </div>
+            </div>
+
+            <div class="modal-progress-section" id="modalProgressSection">
+              <h4>Progresso</h4>
+              <div class="modal-progress-bar">
+                <div class="modal-progress-fill" id="modalProgressFill"></div>
+              </div>
+              <div class="modal-progress-info" id="modalProgressInfo">
+                5 de 10 vendas realizadas (50%)
+              </div>
+            </div>
+
+            <div
+              class="modal-completion"
+              id="modalCompletion"
+              style="display: none"
+            >
+              <h4>🎉 Missão Concluída!</h4>
+              <div class="completion-info">
+                <div class="completion-date" id="modalCompletionDate"></div>
+                <div class="completion-points" id="modalCompletionPoints"></div>
+              </div>
+            </div>
+
+            <div class="modal-reward">
+              <h4>Recompensa:</h4>
+              <div class="reward-info" id="modalReward">
+                <span class="reward-points">+100 pontos</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn-secondary" onclick="closeModal()">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/missoes.js"></script>
+  </body>
+</html>
