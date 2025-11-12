@@ -11,7 +11,6 @@
     />
   </head>
   <body>
-    <!-- Menu Lateral -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <div class="logo">
@@ -72,9 +71,7 @@
       </div>
     </aside>
 
-    <!-- Conteúdo Principal -->
     <main class="main-content" id="mainContent">
-      <!-- Header -->
       <header class="page-header">
         <div class="header-left">
           <button class="menu-toggle" id="menuToggle">☰</button>
@@ -91,7 +88,6 @@
         </div>
       </header>
 
-      <!-- Tabs de Ranking -->
       <section class="tabs-section">
         <div class="ranking-tabs">
           <button class="ranking-tab active" data-ranking="loja">
@@ -118,10 +114,8 @@
         </div>
       </section>
 
-      <!-- Pódio (Top 3) -->
       <section class="podium-section" id="podiumSection">
         <div class="podium-container">
-          <!-- 2º Lugar -->
           <div class="podium-place second" id="podium2">
             <div class="podium-position">2º</div>
             <div class="podium-avatar">
@@ -134,7 +128,6 @@
             </div>
           </div>
 
-          <!-- 1º Lugar -->
           <div class="podium-place first" id="podium1">
             <div class="podium-crown">👑</div>
             <div class="podium-position">1º</div>
@@ -148,7 +141,6 @@
             </div>
           </div>
 
-          <!-- 3º Lugar -->
           <div class="podium-place third" id="podium3">
             <div class="podium-position">3º</div>
             <div class="podium-avatar">
@@ -163,19 +155,15 @@
         </div>
       </section>
 
-      <!-- Lista de Ranking -->
       <section class="ranking-section">
         <div class="ranking-header">
           <h2 id="rankingTitle">Ranking da Loja</h2>
           <span class="ranking-total" id="rankingTotal">10 vendedores</span>
         </div>
 
-        <div class="ranking-list" id="rankingList">
-          <!-- Lista será carregada via JavaScript -->
-        </div>
+        <div class="ranking-list" id="rankingList"></div>
       </section>
 
-      <!-- Modal de Detalhes do Vendedor -->
       <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content">
           <button class="modal-close" id="modalClose">×</button>
@@ -212,9 +200,7 @@
 
             <div class="achievements-preview">
               <h4>Conquistas Recentes</h4>
-              <div class="achievements-list" id="modalAchievements">
-                <!-- Conquistas serão carregadas via JS -->
-              </div>
+              <div class="achievements-list" id="modalAchievements"></div>
             </div>
           </div>
           <div class="modal-footer">
