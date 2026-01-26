@@ -42,7 +42,7 @@ Este projeto foi desenvolvido como atividade acadêmica do primeiro semestre par
 1. Clone este repositório
 
 ```bash
-git clone https://github.com/seu-usuario/swift-vendas-plus.git
+git clone https://github.com/Rfresatto/swift-vendas-plus.git
 ```
 
 2. Navegue até a pasta do projeto
