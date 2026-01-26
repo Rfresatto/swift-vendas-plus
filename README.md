@@ -113,4 +113,4 @@ Este projeto permitiu aplicar na prática conceitos fundamentais de:
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins educacionais como parte do primeiro semestre do curso.
+Este projeto foi desenvolvido para fins educacionais como parte do primeiro ano do curso.
